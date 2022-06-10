@@ -728,7 +728,7 @@ def main():
                         shadow=True,
                         fancybox=True,
                     )
-            elif not cnt == len(filters):
+            elif not cnt == len(filters_plot):
                 plt.setp(ax2.get_xticklabels(), visible=False)
             plt.xticks(fontsize=36)
             plt.yticks(fontsize=36)
