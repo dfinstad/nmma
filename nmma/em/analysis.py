@@ -146,6 +146,12 @@ def main():
         help="Sampling seed (default: 42)",
     )
     parser.add_argument(
+        "--checkpoint-time",
+        type=float,
+        default=600.0,
+        help="Time in seconds between checkpoints (default: 600)"
+    )
+    parser.add_argument(
         "--injection", metavar="PATH", type=str, help="Path to the injection json file"
     )
     parser.add_argument(
@@ -548,7 +554,7 @@ def main():
         seed=args.seed,
         soft_init=True,
         queue_size=args.cpus,
-        check_point_delta_t=3600,
+        check_point_delta_t=args.checkpoint_time,
     )
 
     result.save_posterior_samples()
